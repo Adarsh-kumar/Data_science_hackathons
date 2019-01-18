@@ -1,0 +1,28 @@
+The problem was to predict the shipping status of the courier services. The data set have 12 features which includes the date of compalaint-registered , complaint-reason ,coustemer's comment, response provided by the company etc.
+
+First of all the data set is heighly unbalanced in terms of different classes of the status.Here's the distribution  of differnt classes-
+
+class -1    34300
+class 3-     5018
+class 2-     2818
+class 0-     809
+class 4-     321
+
+Due to heighly unbalaced class distribution simple ensemble technique results in a low f1 score of 0.65.
+
+strategy -
+
+I tried to build a hirerchical classification type of model such that first it will classify into class 1 or rest of all classes combined.
+Similaly for the next step it will either class 3 or rest of the classes combined and finally each point will be assigned a single class.
+Building a boosting model for each step resulted in a f1 score of 0.715 ( around 6 % percent better).
+
+further improvement-
+
+During testing this model on cross validation set , I observed that model at the third step is classifying all the points in a sinle class.
+I plotted the bivarite plots of the given features ( as shown in the notebook) that although the classes are not very heighly imbalanced but the distibution of the some of the features is creating ambibuity for the model, I dropped those features and also applied undersampling(looking at the bivaiate plots some of the majority class points were too close so I decided to perform the undersampling ), which improved the f1 score to 0.72091 arond 1 % improvemnt (arond 140 points were now classified in the right class).
+
+
+One more observation was that most of the points that should be in class 3 has been classified in class 2 ,so i planned to built a model to classify the points in either 1 or 2&3 combined or 0&4 combined and then another classifier for class 2 and class3.
+It improved the model accuracy by 1.4 % percent and the best f1 score was 0.7341.
+
+
