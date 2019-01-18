@@ -1,5 +1,2 @@
-# Data_science_hackathons
-
-Repository of some of the data science hackathons i have participated. ZS_data_science challenge contains my submissions for Zs contest at hackereath.
-I have Two different models (Weekly time series and xgboost). Time series based models are better for finding short term correlation but since the 
-dataset was quiet diverse in feature of dates xgboost based model was better performing.
+It's the Repository of Data science hackathons I have participated. Brain_waves is a annual machine learning challenge by Societee Generalle ,the complete strategy and approch is wriiten in the file- strategy . 
+ZS_data science hackathon is annual data science hackathon by ZS_Associate, I have also explained the approarch in the description file.
